@@ -1,26 +1,30 @@
+import jade.core.AID;
+import messages.Exam;
+
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ScheduledExam implements Comparable {
+public class ScheduledExam implements Comparable, Serializable {
 
-    private Patient patient;
+    private AID patient;
     private Date beginDate;
     private Date endDate;
     private Exam exam;
 
-    public ScheduledExam(Date beginDate, Exam exam, double duration) {
-        DateFormat f = new SimpleDateFormat("d/M/y H:m");
+    public ScheduledExam(Date beginDate, double duration, Exam exam, AID p) {
+        this.patient = p;
         this.beginDate = beginDate;
         this.exam = exam;
         this.endDate = new Date((long) (this.beginDate.getTime() + duration * 60 * 60 * 1000));
     }
 
-    public Patient getPatient() {
+    public AID getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(AID patient) {
         this.patient = patient;
     }
 
@@ -55,6 +59,17 @@ public class ScheduledExam implements Comparable {
 
     public void setExam(Exam exam) {
         this.exam = exam;
+    }
+
+    public boolean examsOverlap(ScheduledExam s) {
+        if(s == null) return false;
+        if(this.beginDate.getTime() <= s.beginDate.getTime()) {
+            if (this.endDate.getTime() > s.beginDate.getTime())
+                return true;
+        }
+        else if (s.endDate.getTime() > this.beginDate.getTime())
+            return true;
+        return false;
     }
 
     @Override
