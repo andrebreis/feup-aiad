@@ -11,7 +11,7 @@ public class Resource extends Agent {
 
     private HashSet<Exam> validExams;
     private TreeSet<ScheduledExam> scheduledExams;
-
+/*
     public static void main(String[] args) throws ParseException {
         DateFormat f = new SimpleDateFormat("d/M/y H:m");
         Date d1 = f.parse("25/11/2017 10:00");
@@ -31,5 +31,5 @@ public class Resource extends Agent {
              exams) {
             System.out.println(s);
         }
-    }
+    }*/
 }
