@@ -1,3 +1,5 @@
+package logic.agents;
+
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
@@ -7,15 +9,12 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
-import jade.proto.ContractNetInitiator;
+import logic.ScheduledExam;
 import messages.CFPMessage;
 import messages.Exam;
 import messages.ProposalMessage;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Resource extends Agent {

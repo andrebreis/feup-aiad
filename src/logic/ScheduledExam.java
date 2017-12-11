@@ -1,9 +1,9 @@
+package logic;
+
 import jade.core.AID;
 import messages.Exam;
 
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScheduledExam implements Comparable, Serializable {

@@ -1,4 +1,5 @@
-import jade.core.AID;
+package logic.agents;
+
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.domain.DFService;
@@ -6,18 +7,14 @@ import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
-import jade.lang.acl.MessageTemplate;
 import jade.lang.acl.UnreadableException;
-import jade.proto.ContractNetResponder;
+import logic.ScheduledExam;
 import messages.CFPMessage;
 import messages.Exam;
 import messages.ProposalMessage;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Patient extends Agent {
 
